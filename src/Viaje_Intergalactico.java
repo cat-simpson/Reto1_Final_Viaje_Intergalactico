@@ -35,7 +35,7 @@ public class Viaje_Intergalactico {
         int opcion;
         boolean condicion = true;
 
-        while (condicion) {
+        do {
 
             System.out.println("A continuación te mostraremos los destinos disponibles: ");
             System.out.println("1. Marte");
@@ -49,39 +49,28 @@ public class Viaje_Intergalactico {
             opcion = sc.nextInt();
             System.out.println();
 
-            switch (opcion) {
-                case 1:
-                    viaje("Marte", Distancia_Marte);
-                    break;
-
-                case 2:
-                    viaje("Jupiter", Distancia_Jupiter);
-                    break;
-
-                case 3:
-                    viaje("Saturno", Distancia_Saturno);
-                    break;
-
-                case 4:
-                    viaje("Urano", Distancia_Urano);
-                    break;
-
-                case 5:
-                    viaje("La Estación Espacial Internacional", Distancia_Estacion);
-                    break;
-
-                case 6:
-                    condicion = false;
-                    System.out.println("Lamentamos que te vayas... Regresa pronto!");
-                    break;
-
-                default:
-                    System.out.println("Opción no válida. Inténtalo nuevamente!\n");
-                    break;
-
+            if (opcion < 1 || opcion > 6) {
+                System.out.println("Opción inválida. Por favor, intente nuevamente.\n");
+            } else {    
+                switch (opcion) {
+                    case 1:
+                        viaje("Marte", Distancia_Marte);
+                        break;
+                    case 2:
+                        viaje("Jupiter", Distancia_Jupiter);
+                        break;
+                    case 3:
+                        viaje("Saturno", Distancia_Saturno);
+                        break;
+                    case 4:
+                        viaje("Urano", Distancia_Urano);
+                        break;
+                    case 5:
+                        viaje("La Estación Espacial Internacional", Distancia_Estacion);
+                        break;
+                }                        
             }
-            condicion = false;
-        }
+        } while (opcion < 1 || opcion > 6);   
 
         sc.close();
     }
