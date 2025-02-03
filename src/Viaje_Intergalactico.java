@@ -4,13 +4,11 @@ public class Viaje_Intergalactico {
 
     public static void main(String[] args) {
 
-        Double Distancia_Marte = 225d; // Millones de kms
-        Double Distancia_Jupiter = 778d; // Millones de kms
-        Double Distancia_Saturno = 1426d; // Millones de kms
-        Double Distancia_Urano = 2870d; // Millones de kms
+        Double Distancia_Marte = 225.8d; // Millones de kms
+        Double Distancia_Jupiter = 778.6d; // Millones de kms
+        Double Distancia_Saturno = 1_426.3d; // Millones de kms
+        Double Distancia_Urano = 2_870.2d; // Millones de kms
         Double Distancia_Estacion = 408d; // Kms
-
-        String destino = "";
 
         Scanner sc = new Scanner(System.in);
 
@@ -33,10 +31,8 @@ public class Viaje_Intergalactico {
         System.out.println();
 
         int opcion;
-        boolean condicion = true;
 
         do {
-
             System.out.println("A continuación te mostraremos los destinos disponibles: ");
             System.out.println("1. Marte");
             System.out.println("2. Jupiter");
@@ -51,7 +47,7 @@ public class Viaje_Intergalactico {
 
             if (opcion < 1 || opcion > 6) {
                 System.out.println("Opción inválida. Por favor, intente nuevamente.\n");
-            } else {    
+            } else {
                 switch (opcion) {
                     case 1:
                         viaje("Marte", Distancia_Marte);
@@ -68,9 +64,9 @@ public class Viaje_Intergalactico {
                     case 5:
                         viaje("La Estación Espacial Internacional", Distancia_Estacion);
                         break;
-                }                        
+                }
             }
-        } while (opcion < 1 || opcion > 6);   
+        } while (opcion < 1 || opcion > 6);
 
         sc.close();
     }
@@ -79,7 +75,5 @@ public class Viaje_Intergalactico {
         Scanner sc = new Scanner(System.in);
         System.out.println("Has elegido viajar a " + destino + ".");
         System.out.println("La distancia es de " + distancia + " millones de kms.\n");
-
     }
-
 }
